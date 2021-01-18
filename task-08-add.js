@@ -11,3 +11,15 @@
 // median([1, 2, 3, 4, 5]) // 3
 
 // median([3, 6, 10, 15, 20, 99]) // 12.5
+
+let median = (arr) => {
+    let a = arr.length;
+    let b = 0;
+    
+    a % 2 == 0 ? b = (arr[a/2-1] + arr[a/2 ]) / 2 : b = arr[(a-1)/2]
+        //console.log(b);
+    return b;
+}
+
+median([1, 2, 3, 4, 5])
+median([3, 6, 10, 15, 20, 99])
