@@ -1,7 +1,10 @@
 let product_name = 'Генератор защитного поля';
 let price = 1000;
 
-console.log(`Выбран « ${product_name}», цена за штуку ${price} кредитов`);
+let str = `Выбран «${product_name}», цена за штуку ${price} кредитов`
 
+console.log(str);
 price = 2000;
-console.log(`Выбран « ${product_name}», цена за штуку ${price} кредитов`);
+str = `Выбран «${product_name}», цена за штуку ${price} кредитов`
+
+console.log(str);
