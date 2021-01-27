@@ -7,10 +7,14 @@ let message;
 if (userInputAmount)
 {
     totalPrice = userInputAmount * pricePerDroid;
-    let restCredits = credits - totalPrice;
-    if (totalPrice <= credits) 
-    { message = `Вы купили ${userInputAmount} дроидов, на счету осталось ${restCredits} кредитов.` }
-    else { message = 'Недостаточно средств на счету!' }
+    if (isNaN(totalPrice)) {
+        message = 'введено не число!';
+    } else {
+        let restCredits = credits - totalPrice;
+        if (totalPrice <= credits) 
+        { message = `Вы купили ${userInputAmount} дроидов, на счету осталось ${restCredits} кредитов.` }
+        else { message = 'Недостаточно средств на счету!' }
+      }
 } 
 else { message = 'Отменено пользователем!'};
 
