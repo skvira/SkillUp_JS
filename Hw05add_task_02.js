@@ -29,15 +29,7 @@ class Library {
         this.arrBooks = arrBooks
     }
 
- let feed = ['good', 'bad', 'normal']
-
- function getFetback(arrFeed, stars) {
-     let feetback = {}
-     for (let rate of arrFeed) {
-         feetback[rate] = stars
-     }
-     return feetback;
- }
+    favourite = [];
 
     buy (book) {
         this.arrBooks.includes(book) ? console.log("книга вже куплена") : this.arrBooks.push(book);
@@ -52,14 +44,14 @@ class Library {
     }
     addToFavourite(nameBook) {
         for (let book of this.arrBooks) {
-            if (this.arrBooks.title === nameBook && !this.favourite.includes(book)) {
+            if (book.title === nameBook && !this.favourite.includes(book)) {
                 this.favourite.push(book);
             }
         }
     }
     removeFromFavourite (nameBook) {
         for (let book of this.favourite) {
-            if (this.favourite.title === nameBook) {
+            if (book.title === nameBook) {
                 let index = this.favourite.indexOf(book)
                 this.favourite.splice(index, 1);
             }
@@ -75,7 +67,7 @@ class Library {
                 finishedBooks.push(book)
             }
         }
-        return finishedBooks
+        return finishedBooks.length
     }
     totalCost () {
         let totalCost = 0
@@ -140,13 +132,13 @@ library.sell ('The Hunger Games');
 console.log(library);
 library.buy(book1);
 console.log(library);
-console.log(favourite);
+console.log(library.favourite);
 library.addToFavourite('java');
 library.addToFavourite('The Hunger Games');
 library.addToFavourite('Igra-Endera');
-console.log(favourite);
+console.log(library.favourite);
 library.removeFromFavourite ('The Hunger Games');
-console.log(favourite);
-library.сountFavouriteBooks ();
-library.finishedBook(); 
-library.totalCost ();
+console.log(library.favourite);
+console.log(library.сountFavouriteBooks());
+console.log(library.finishedBook()); 
+console.log(library.totalCost ());
